@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<!--esta es mi practica 71-->
+
+<head>
+    <title>Practica 71</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <form method="post" action="procesar.php" id="form1">
+        Enter password:
+        <input type="password" id="pass1" name="pass1" size="25" required>
+        <br> Repeat password:
+        <input type="password" id="pass2" name="pass2" size="25" required>
+        <br>
+        <input type="submit" id="confirm" name="confirm" value="Confirm">
+    </form>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', start, false);
+
+        function start() {
+            document.getElementById("form1").addEventListener('submit', nice, false);
+        }
+
+        function nice(evt) {
+            var passw1;
+            var passw2;
+            passw1 = document.getElementById("pass1").value;
+            passw2 = document.getElementById("pass2").value;
+            if (passw1 != passw2) {
+                alert('The keys entered are different.');
+                evt.preventDefault();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
